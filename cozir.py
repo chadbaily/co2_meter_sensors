@@ -52,7 +52,7 @@ while True:
     dateTime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     #This is needed to stop the 1st reading that is incorrect
-    if (fltCo2 >0 && fltHumidity > 0 && fltTemp > 0):
+    if (fltCo2 > 0 and fltHumidity > 0 and fltTemp > 0):
         print "Temperature in *C : ", fltTemp, " \t Co2 : ", fltCo2, "\t\t %  Humidity : ", fltHumidity
         #Inserting data into a database
         # cursor.execute("INSERT INTO cozir(temperature, humidity, co2, date) values(%s, %s, %s, %s)",(fltTemp, fltHumidity, fltCo2, dateTime))
