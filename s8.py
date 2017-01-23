@@ -6,7 +6,7 @@ import MySQLdb #if not installed run 'sudo apt-get install python-mysqldb'
 db = MySQLdb.connect("localhost", "root", "", "co2_meter")
 cursor = db.cursor()
 
-ser = serial.Serial("/dev/ttyUSB0")
+ser = serial.Serial("/dev/ttyUSB1")
 print "S8\n"
 ser.flushInput()
 time.sleep(1)
@@ -26,4 +26,4 @@ while(True):
     db.commit()
 
     print "CO2 = " +str(co2)
-    time.sleep(300)
+    time.sleep(3)

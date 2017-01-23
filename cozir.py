@@ -12,7 +12,7 @@ db = MySQLdb.connect("localhost", "root", "", "co2_meter")
 cursor = db.cursor()
 
 #The serial port will need to be changed accordingly. It can be found by running 'dmesg | grep "tty"'
-ser = serial.Serial("/dev/ttyUSB1")
+ser = serial.Serial("/dev/ttyUSB0")
 print "Cozir Sensor"
 
 ser.write("K 2\r\n")
@@ -56,4 +56,4 @@ while True:
     db.commit()
 
     #sleep for 5 Minutes
-    time.sleep(300)
+    time.sleep(3)
